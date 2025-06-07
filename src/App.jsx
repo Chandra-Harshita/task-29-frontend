@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     // Fetch available videos
     axios
-      .get('http://localhost:8000/videos')
+      .get('https://task-videostreaming-backend.onrender.com/videos')
       .then((res) => setVideos(res.data))
       .catch((err) => console.error('Failed to load videos', err))
   }, [])
@@ -47,7 +47,7 @@ function App() {
       {selectedVideo && (
         <video ref={videoRef} controls>
           <source
-            src={`http://localhost:8000/video?name=${selectedVideo}`}
+            src={`https://task-videostreaming-backend.onrender.com/video?name=${selectedVideo}`}
             type="video/mp4"
           />
           Your browser does not support the video tag.
